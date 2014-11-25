@@ -19,11 +19,13 @@ class Match:
             print("BEGIN. Type is " + filter_type)
             if filter_type == 'S':
                 self.filter_same(m_filter)
+                #pass
             elif filter_type == 'C':
-                #self.filter_complementary(m_filter)
-                pass
+                self.filter_complementary(m_filter)
+                #pass
             elif filter_type == 'R':
                 self.filter_range(m_filter)
+                #pass
             else:
                 raise Exception('no filter type provided')
         return self.match_list.all().values()
@@ -50,17 +52,26 @@ class Match:
         self.match_list = self.match_list.filter(q).filter(q_prime)
 
     def filter_range(self, m_filter):
+        # find the relevant min and max options for this filter (should only be one each)
+        # @@ should reduce the number of DB calls here
         min_option_pk = m_filter.options.get(type='m').pk
         max_option_pk = m_filter.options.get(type='M').pk
         print("min pk: " + str(min_option_pk))
         print("max pk: " + str(max_option_pk))
+        # obtain the user's minimum and maximum range
         min_user_value = self.user.meta.get(m_filter_id=m_filter.pk, option__pk=min_option_pk).user_value
+        # need to add a don't care setting
         max_user_value = self.user.meta.get(m_filter_id=m_filter.pk, option__pk=max_option_pk).user_value
+
+        # finally, get the user's own value for converse matching
         self_user_value = self.user.self.get(m_filter_id=m_filter.pk, option__pk=min_option_pk).user_value
+
+
         print("min value: " + str(min_user_value))
         print("max value: " + str(max_user_value))
         print("self value: " + str(self_user_value))
-
+        # @@ change to Q filters.
+        # @@ Functions should eventually just return Q filters that are combined all at once
         self.match_list = self.match_list.filter(self__user_value__gte=min_user_value, self__option__pk=min_option_pk)
         print(self.match_list)
         self.match_list = self.match_list.filter(self__user_value__lte=max_user_value, self__option__pk=min_option_pk)
@@ -68,3 +79,9 @@ class Match:
 
         self.match_list = self.match_list.filter(meta__user_value__lte=self_user_value, meta__option__pk=min_option_pk)
         self.match_list = self.match_list.filter(meta__user_value__gte=self_user_value, meta__option__pk=max_option_pk)
+
+    def filter_complementary(self, m_filter):
+        user_match_meta = self.user.meta.get(m_filter_id=m_filter.pk).option.pk
+        user_self_meta = self.user.self.get(m_filter_id=m_filter.pk).option.pk
+        self.match_list = self.match_list.filter(self__option__pk=user_match_meta)
+        self.match_list = self.match_list.filter(meta__option__pk=user_self_meta)

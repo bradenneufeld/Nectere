@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4eb582c7-946d-4257-8541-203c5b0051dd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/match.py" afterPath="$PROJECT_DIR$/app/match.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models.py" afterPath="$PROJECT_DIR$/app/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nectere/urls.py" afterPath="$PROJECT_DIR$/nectere/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views.py" afterPath="$PROJECT_DIR$/app/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nectere.iws" />
@@ -61,8 +57,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="713" max-vertical-offset="1320">
-              <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="818" max-vertical-offset="1350">
+              <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -70,6 +66,32 @@
       </file>
       <file leaf-file-name="app_mfilteroptions" pinned="false" current-in-tab="false">
         <entry file="dbDummy://dbtable:/d2814fcc/6a07eec6-e074-4ee2-bd9f-080ea352032a/..app_mfilteroptions">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app_userselfmeta" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/d2814fcc/6a07eec6-e074-4ee2-bd9f-080ea352032a/..app_userselfmeta">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app_mfilter" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/d2814fcc/6a07eec6-e074-4ee2-bd9f-080ea352032a/..app_mfilter">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state />
           </provider>
@@ -89,32 +111,6 @@
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app_userselfmeta" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/d2814fcc/6a07eec6-e074-4ee2-bd9f-080ea352032a/..app_userselfmeta">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app_usermatchmeta" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/d2814fcc/6a07eec6-e074-4ee2-bd9f-080ea352032a/..app_usermatchmeta">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -146,8 +142,8 @@
       <file leaf-file-name="match.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/match.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7678917" vertical-offset="608" max-vertical-offset="1125">
-              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.60928434" vertical-offset="0" max-vertical-offset="1395">
+              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -155,8 +151,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app_mfilter" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/d2814fcc/6a07eec6-e074-4ee2-bd9f-080ea352032a/..app_mfilter">
+      <file leaf-file-name="app_usermatchmeta" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/d2814fcc/6a07eec6-e074-4ee2-bd9f-080ea352032a/..app_usermatchmeta">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state />
           </provider>
@@ -541,6 +537,13 @@
       <option name="number" value="Default" />
       <updated>1416792848988</updated>
     </task>
+    <task id="LOCAL-00001" summary="added range filter">
+      <created>1416955824839</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1416955824840</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -554,6 +557,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39941263" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -584,6 +588,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="added range filter" />
+    <option name="LAST_COMMIT_MESSAGE" value="added range filter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -884,37 +890,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/d2814fcc/6a07eec6-e074-4ee2-bd9f-080ea352032a/..app_mfilter">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="353" max-vertical-offset="1320">
-          <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="548" max-vertical-offset="1350">
+          <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/d2814fcc/6a07eec6-e074-4ee2-bd9f-080ea352032a/..app_mfilteroptions">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/d2814fcc/6a07eec6-e074-4ee2-bd9f-080ea352032a/..app_userselfmeta">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state />
       </provider>
@@ -936,10 +920,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/d2814fcc/6a07eec6-e074-4ee2-bd9f-080ea352032a/..app_userselfmeta">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/d2814fcc/6a07eec6-e074-4ee2-bd9f-080ea352032a/..app_mfilter">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/match.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7678917" vertical-offset="608" max-vertical-offset="1125">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.60928434" vertical-offset="0" max-vertical-offset="1395">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>

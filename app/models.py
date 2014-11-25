@@ -44,6 +44,8 @@ class Options(models.Model):
     OPTION_TYPES = (
         ('m', 'Min'),
         ('M', 'Max'),
+        ('A', 'Complementary A of A-B'),
+        ('B', 'Complementary B of B-A'),
         ('N', 'normal')
     )
     type = models.CharField(max_length=1, choices=OPTION_TYPES, default='N')
