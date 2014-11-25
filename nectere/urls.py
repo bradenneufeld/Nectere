@@ -17,9 +17,9 @@ users_routes.register(
     parents_query_lookups=['user']
 )
 users_routes.register(
-    r'match',
+    r'meta',
     UserMatchMetaViewSet,
-    base_name='user-match',
+    base_name='user-meta',
     parents_query_lookups=['user']
 )
 
@@ -37,7 +37,7 @@ filter_route.register(
 
 
 urlpatterns = patterns('',
-    url(r'^$', index),
+    url(r'^$', UserMatchView),
     url(r'^', include(router.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))

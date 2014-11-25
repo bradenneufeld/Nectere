@@ -2,6 +2,13 @@ from django.db import models
 
 
 class MatchingFunction(models.Model):
+    """Meta  class for MFilter, MPreference, and MSimilarity classes.
+
+    Establishes common attributes between all matching functions.
+
+    Attributes:
+        name: a descriptive name for the function
+    """
     name = models.CharField(max_length=30)
 
     class Meta:
@@ -9,18 +16,37 @@ class MatchingFunction(models.Model):
 
 
 class MFilter(MatchingFunction):
-    TYPES = (
+    """Model for filters.
+
+    Attributes:
+        type: defines the match type
+    """
+
+    FILTER_TYPES = (
         ('S', 'Same'),
         ('C', 'Complementary'),
         ('R', 'Range')
     )
-    type = models.CharField(max_length=1, choices=TYPES)
+    type = models.CharField(max_length=1, choices=FILTER_TYPES)
 
 
 class Options(models.Model):
+    """Meta class for match options.
+
+    Attributes:
+        name: defines the match type
+        value: this option's value
+        type: minimum, maximum, same, or comp
+    """
     name = models.CharField(max_length=30)
     value = models.IntegerField()
-    type = models.IntegerField(default=0)
+
+    OPTION_TYPES = (
+        ('m', 'Min'),
+        ('M', 'Max'),
+        ('N', 'normal')
+    )
+    type = models.CharField(max_length=1, choices=OPTION_TYPES, default='N')
 
     class Meta:
         abstract = True
