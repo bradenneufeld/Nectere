@@ -10,18 +10,19 @@
       <column name="type" sqlType="VARCHAR(1)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
       <exported-key name="#FAKE_app_mfilteroptions_1" table="app_mfilteroptions" schema="" catalog="" columns="matching_function_id"/>
-      <exported-key name="#FAKE_app_usermfilter_2" table="app_usermfilter" schema="" catalog="" columns="m_filter_id"/>
+      <exported-key name="#FAKE_app_usermatchmeta_2" table="app_usermatchmeta" schema="" catalog="" columns="m_filter_id"/>
+      <exported-key name="#FAKE_app_userselfmeta_2" table="app_userselfmeta" schema="" catalog="" columns="m_filter_id"/>
     </table>
     <table name="app_mfilteroptions" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="name" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
-      <column name="user_value" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <column name="match_value" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="matching_function_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <column name="match_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="type" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
       <foreign-key name="#FAKE_app_mfilteroptions_1" columns="matching_function_id" ref-table="app_mfilter" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <exported-key name="#FAKE_app_user_m_filter_options_1" table="app_user_m_filter_options" schema="" catalog="" columns="mfilteroptions_id"/>
+      <exported-key name="#FAKE_app_usermatchmeta_3" table="app_usermatchmeta" schema="" catalog="" columns="option_id"/>
+      <exported-key name="#FAKE_app_userselfmeta_3" table="app_userselfmeta" schema="" catalog="" columns="option_id"/>
       <index name="app_mfilteroptions_435c3872" unique="true" columns="matching_function_id"/>
     </table>
     <table name="app_user" schema="" catalog="" type="TABLE">
@@ -29,29 +30,36 @@
       <column name="first_name" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <column name="last_name" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
-      <exported-key name="#FAKE_app_user_m_filter_options_2" table="app_user_m_filter_options" schema="" catalog="" columns="user_id"/>
-      <exported-key name="#FAKE_app_usermfilter_1" table="app_usermfilter" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_usermatchmeta_1" table="app_usermatchmeta" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_userselfmeta_1" table="app_userselfmeta" schema="" catalog="" columns="user_id"/>
     </table>
-    <table name="app_user_m_filter_options" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <column name="mfilteroptions_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <primary-key columns="id"/>
-      <foreign-key name="#FAKE_app_user_m_filter_options_1" columns="mfilteroptions_id" ref-table="app_mfilteroptions" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <foreign-key name="#FAKE_app_user_m_filter_options_2" columns="user_id" ref-table="app_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <index name="app_user_m_filter_options_bf1a03bd" unique="true" columns="mfilteroptions_id"/>
-      <index name="app_user_m_filter_options_e8701ad4" unique="true" columns="user_id"/>
-    </table>
-    <table name="app_usermfilter" schema="" catalog="" type="TABLE">
+    <table name="app_usermatchmeta" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="user_value" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="option_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="m_filter_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
-      <foreign-key name="#FAKE_app_usermfilter_1" columns="user_id" ref-table="app_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <foreign-key name="#FAKE_app_usermfilter_2" columns="m_filter_id" ref-table="app_mfilter" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
-      <index name="app_usermfilter_e8701ad4" unique="true" columns="user_id"/>
-      <index name="app_usermfilter_0c639856" unique="true" columns="m_filter_id"/>
+      <foreign-key name="#FAKE_app_usermatchmeta_1" columns="user_id" ref-table="app_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_usermatchmeta_2" columns="m_filter_id" ref-table="app_mfilter" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_usermatchmeta_3" columns="option_id" ref-table="app_mfilteroptions" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="app_usermatchmeta_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_usermatchmeta_0c639856" unique="true" columns="m_filter_id"/>
+      <index name="app_usermatchmeta_28df3725" unique="true" columns="option_id"/>
+    </table>
+    <table name="app_userselfmeta" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_value" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="option_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="m_filter_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_userselfmeta_1" columns="user_id" ref-table="app_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_userselfmeta_2" columns="m_filter_id" ref-table="app_mfilter" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_userselfmeta_3" columns="option_id" ref-table="app_mfilteroptions" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="app_userselfmeta_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_userselfmeta_0c639856" unique="true" columns="m_filter_id"/>
+      <index name="app_userselfmeta_28df3725" unique="true" columns="option_id"/>
     </table>
     <table name="auth_group" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>

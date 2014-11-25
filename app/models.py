@@ -19,9 +19,8 @@ class MFilter(MatchingFunction):
 
 class Options(models.Model):
     name = models.CharField(max_length=30)
-    user_value = models.IntegerField()
-    match_value = models.IntegerField(default=0)
-    match_id = models.IntegerField(default=0)
+    value = models.IntegerField()
+    type = models.IntegerField(default=0)
 
     class Meta:
         abstract = True
@@ -33,23 +32,25 @@ class MFilterOptions(Options):
     class Meta:
         ordering = ('matching_function',)
 
-    def __unicode__(self):
-        return '%s - %s: %s' % (self.matching_function, self.name, self.name)
-
 
 class User(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    m_filter_options = models.ManyToManyField(MFilterOptions)
+    self_meta = models.ManyToManyField(MFilterOptions, through='UserSelfMeta', related_name='self')
+    match_meta = models.ManyToManyField(MFilterOptions, through='UserMatchMeta', related_name='meta')
 
 
-class UserMFilter(models.Model):
+class UserSelfMeta(models.Model):
+    user = models.ForeignKey(User, related_name='self')
+    option = models.ForeignKey(MFilterOptions, related_name='self_option')
+    m_filter = models.ForeignKey(MFilter, related_name='user_self_meta')
     user_value = models.IntegerField()
-    m_filter = models.ForeignKey(MFilter)
-    user = models.ForeignKey(User, related_name='m_filters')
 
-    class Meta:
-        ordering = ('m_filter',)
 
-    def __unicode__(self):
-        return '%s - %s: %s' % (self.m_filter, self.user, self.user_value)
+class UserMatchMeta(models.Model):
+    user = models.ForeignKey(User, related_name='meta')
+    option = models.ForeignKey(MFilterOptions, related_name='meta_option')
+    m_filter = models.ForeignKey(MFilter, related_name='user_match_meta')
+    user_value = models.IntegerField()
+
+

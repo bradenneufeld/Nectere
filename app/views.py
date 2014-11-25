@@ -1,8 +1,8 @@
 from django.http import HttpResponse
 from rest_framework.viewsets import ModelViewSet
 from rest_framework_extensions.mixins import NestedViewSetMixin
-from app.models import User, UserMFilter, MFilter, MFilterOptions
-from app.serializers import UserSerializer, UserMFiltersSerializer, MFilterSerializer, MFilterOptionsSerializer
+from app.models import *
+from app.serializers import *
 from app.match import Match
 
 
@@ -11,9 +11,14 @@ class UserViewSet(NestedViewSetMixin, ModelViewSet):
     serializer_class = UserSerializer
 
 
-class UserFilterDataViewSet(NestedViewSetMixin, ModelViewSet):
-    model = UserMFilter
-    serializer_class = UserMFiltersSerializer
+class UserSelfMetaViewSet(NestedViewSetMixin, ModelViewSet):
+    model = UserSelfMeta
+    serializer_class = UserSelfMetaSerializer
+
+
+class UserMatchMetaViewSet(NestedViewSetMixin, ModelViewSet):
+    model = UserMatchMeta
+    serializer_class = UserMatchMetaSerializer
 
 
 class MFilterViewSet(NestedViewSetMixin, ModelViewSet):

@@ -11,15 +11,15 @@ users_routes = router.register(
     base_name='user'
 )
 users_routes.register(
-    r'filter-profile',
-    UserFilterDataViewSet,
-    base_name='user-filter-profile',
+    r'self',
+    UserSelfMetaViewSet,
+    base_name='user-self',
     parents_query_lookups=['user']
 )
 users_routes.register(
-    r'filter-options',
-    MFilterOptionsViewSet,
-    base_name='user-filter-options',
+    r'match',
+    UserMatchMetaViewSet,
+    base_name='user-match',
     parents_query_lookups=['user']
 )
 
@@ -37,6 +37,7 @@ filter_route.register(
 
 
 urlpatterns = patterns('',
+    url(r'^$', index),
     url(r'^', include(router.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
