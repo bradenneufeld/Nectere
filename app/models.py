@@ -29,6 +29,9 @@ class MFilter(MatchingFunction):
     )
     type = models.CharField(max_length=1, choices=FILTER_TYPES)
 
+    def __str__(self):
+        return '%s: %s' % (self.name, self.type)
+
 
 class Options(models.Model):
     """Meta class for match options.
@@ -52,6 +55,9 @@ class Options(models.Model):
 
     class Meta:
         abstract = True
+
+    def __str__(self):
+        return '%s: %s' % (self.name, self.value)
 
 
 class MFilterOptions(Options):

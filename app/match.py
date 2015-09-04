@@ -11,7 +11,7 @@ class Match:
         self.match_list = User.objects.all().exclude(pk=user_pk)
 
     def match(self):
-        pass
+        self.filter()
 
     def filter(self):
         for m_filter in self.m_filters:

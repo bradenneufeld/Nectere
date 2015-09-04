@@ -3,6 +3,10 @@ from django.contrib import admin
 from rest_framework_extensions.routers import ExtendedSimpleRouter
 from app.views import *
 
+admin.site.site_header = 'Nectere Administration'
+admin.site.site_title = 'Nectere Admin'
+admin.site.index_title = 'Nectere Matchmaking System'
+
 router = ExtendedSimpleRouter()
 
 users_routes = router.register(
